@@ -31,7 +31,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc README_FILES/* doc doc.ps example $RPM_BUILD_ROOT/usr/info/pcb.info
+%doc README_FILES/* doc doc.ps example $RPM_BUILD_ROOT%{_infodir}/pcb.info
 /usr/X11R6/bin/pcb
 /usr/X11R6/lib/X11/app-defaults/Pcb
 /usr/X11R6/lib/X11/pcb
