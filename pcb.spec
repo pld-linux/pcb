@@ -22,14 +22,14 @@ circuit boards.
 xmkmf -a
 (cd doc; make)
 (cd src; make Pcb.ad)
-make -i
+%{__make} -i
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install DESTDIR=$RPM_BUILD_ROOT
-make install.man DESTDIR=$RPM_BUILD_ROOT
-make install.info DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install.man DESTDIR=$RPM_BUILD_ROOT
+%{__make} install.info DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf %{_mandir}/man1/*
 
