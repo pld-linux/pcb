@@ -2,7 +2,7 @@ Summary:	PCB design tool
 Summary(pl):	PCB - narzêdzie do projektowania
 Name:		pcb
 Version:	1.6.3
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.uni-ulm.de/pub/pcb/mirror/%{name}-%{version}.tgz
@@ -21,7 +21,7 @@ circuit boards.
 
 %description -l pl
 Pcb jest podrêcznym narzêdziem pod X Window System do projektowania
-p³ytek.
+p³ytek drukowanych.
 
 %prep
 %setup -q
@@ -31,7 +31,8 @@ p³ytek.
 xmkmf -a
 %{__make} -i \
 	CC=%{__cc} \
-	CDEBUGFLAGS="%{rpmcflags}"
+	CDEBUGFLAGS="%{rpmcflags}" \
+	EXTRA_DEFINES="-U_XOPEN_SOURCE"
 %{__make} -C doc pcb.man
 %{__make} -C src Pcb.ad
 
@@ -46,16 +47,14 @@ install -d $RPM_BUILD_ROOT%{_infodir}
 
 install doc/pcb.info* $RPM_BUILD_ROOT%{_infodir}
 
-gzip -9nf README_FILES/*
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
