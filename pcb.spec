@@ -5,8 +5,6 @@ Version:	1.6.3
 Release:	4
 License:	GPL
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.uni-ulm.de/pub/pcb/mirror/%{name}-%{version}.tgz
 Patch0:		%{name}-info.patch
 BuildRequires:	XFree86-devel
