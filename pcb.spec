@@ -2,7 +2,7 @@ Summary:	PCB design tool
 Summary(pl):	PCB - narzêdzie do projektowania
 Name:		pcb
 Version:	1.6.3
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
@@ -40,14 +40,15 @@ install -d $RPM_BUILD_ROOT%{_infodir}
 (cd doc; %{__make} install.man DESTDIR=$RPM_BUILD_ROOT)
 install doc/pcb.info $RPM_BUILD_ROOT/%{_infodir}
 
-gzip -9nf README_FILES/* doc.ps
+gzip -9nf README_FILES/*
+gzip -d doc.ps/*.htm*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README_FILES/* doc doc.ps.gz example
+%doc README_FILES/* doc doc.ps/* example
 %attr(755,root,root) %{_bindir}/pcb
 %{_libdir}/X11/app-defaults/Pcb
 %{_libdir}/X11/pcb
