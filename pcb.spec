@@ -5,7 +5,7 @@ Release: 2
 Group: X11/Applications
 Copyright: GPL
 Source: ftp://ftp.uni-ulm.de/pub/pcb/mirror/pcb-1.6.3.tgz
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Pcb is a handy tool for the X Window System build to design 
