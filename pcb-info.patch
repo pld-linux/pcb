@@ -1,0 +1,38 @@
+--- pcb-1.6.3/doc/pcb.texi.raw~	Sat Dec  1 17:26:18 2001
++++ pcb-1.6.3/doc/pcb.texi.raw	Sat Dec  1 17:26:18 2001
+@@ -27,6 +27,15 @@
+ 
+ @end ifinfo
+ 
++@ifinfo
++@format
++@dircategory Miscellaneous:
++@direntry
++* PCB: (pcb).				PCB design tool
++@end direntry
++@end format
++@end ifinfo
++
+ @setchapternewpage on
+ @headings single
+ 
+@@ -382,7 +382,7 @@
+ If you switch active layers in the midst of placing lines a via will automatically be
+ placed, when necessary, in order to continue the connection.
+ 
+-@node Arc Objects, Polygon Objects, Line Objects, Into
++@node Arc Objects, Polygon Objects, Line Objects, Intro
+ @cindex arc
+ @section Arcs
+ With version 1.6 it is possible to draw copper arcs.  The arcs are restricted to
+--- pcb-1.6.3/doc/Imakefile~	Sat Dec  1 17:37:19 2001
++++ pcb-1.6.3/doc/Imakefile	Sat Dec  1 17:37:19 2001
+@@ -46,7 +46,7 @@
+ 
+ pcb.info: pcb.texi
+ 	@echo "creating pcb.info file"
+-	@makeinfo --no-split --no-validate pcb.texi
++	@makeinfo pcb.texi
+ 
+ pcb.dvi: pcb.texi
+ 	@echo "creating pcb.dvi file"
