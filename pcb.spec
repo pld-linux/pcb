@@ -6,6 +6,7 @@ Release:	5
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.uni-ulm.de/pub/pcb/mirror/%{name}-%{version}.tgz
+# Source0-md5:	2649927fd49b89d71a524082b633849e
 Patch0:		%{name}-info.patch
 BuildRequires:	XFree86-devel
 BuildRequires:	tetex-latex
