@@ -48,7 +48,7 @@ install -d $RPM_BUILD_ROOT%{_infodir}
 
 install doc/pcb.info* $RPM_BUILD_ROOT%{_infodir}
 
-gzip -9nf README_FILES/* docs/refcard.ps
+gzip -9nf README_FILES/*
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -61,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README_FILES/* docs/*gz example
+%doc README_FILES/* doc.ps/refcard.ps* example
 %attr(755,root,root) %{_bindir}/pcb
 %{_libdir}/X11/app-defaults/Pcb
 %{_libdir}/X11/pcb
