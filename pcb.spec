@@ -62,6 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README_FILES/* example
 %attr(755,root,root) %{_bindir}/pcb
+%attr(755,root,root) %{_bindir}/pcb-bin
 #%{_appdefsdir}/Pcb
 %{_datadir}/pcb
 %{_mandir}/man1/*
