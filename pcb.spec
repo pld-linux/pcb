@@ -36,10 +36,3 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/lib/X11/app-defaults/Pcb
 /usr/X11R6/lib/X11/pcb
 /usr/X11R6/man/man1/pcb.1x
-
-%changelog
-* Fri Oct 08 1998 Michael Maher <mike@redhat.com>
-- built package for 5.2 
-
-* Tue May 26 1998 Michael Maher <mike@redhat.com>
-- built package
