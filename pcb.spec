@@ -2,7 +2,7 @@ Summary:	Printed Circuit Board design tool
 Summary(pl):	PCB - narzêdzie do projektowania p³ytek drukowanych
 Name:		pcb
 Version:	20050315
-Release:	0.1
+Release:	0.9
 License:	GPL
 Group:		X11/Applications
 # devel snaps: http://dl.sourceforge.net/pcb/
@@ -10,8 +10,8 @@ Source0:	http://dl.sourceforge.net/pcb/%{name}-%{version}.tar.gz
 # Source0-md5:	853a0709003c2c8967c756b6068476f6
 #Source0:	ftp://ftp.uni-ulm.de/pub/pcb/mirror/%{name}-%{version}.tar.gz
 URL:		http://pcb.sourceforge.net/
-BuildRequires:	XFree86-devel
-BuildRequires:	gtk2+-devel
+BuildRequires:	X11-devel
+BuildRequires:	gtk+2-devel
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	tetex-dvips
@@ -33,7 +33,7 @@ p³ytek drukowanych.
 %setup -q
 
 %build
-%configure
+%configure 
 %{__make} -i \
 	CC=%{__cc} \
 	CDEBUGFLAGS="%{rpmcflags}" \
@@ -62,8 +62,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README_FILES/* example
-%attr(755,root,root) %{_bindir}/pcb
-%attr(755,root,root) %{_bindir}/pcb-bin
+%attr(755,root,root) %{_bindir}/*
+##%attr(755,root,root) %{_bindir}/pcb
+##%attr(755,root,root) %{_bindir}/pcb-bin
 #%{_appdefsdir}/Pcb
 %{_datadir}/pcb
 %{_mandir}/man1/*
