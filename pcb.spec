@@ -10,10 +10,10 @@ Source0:	http://dl.sourceforge.net/pcb/%{name}-%{version}.tar.gz
 # Source0-md5:	853a0709003c2c8967c756b6068476f6
 #Source0:	ftp://ftp.uni-ulm.de/pub/pcb/mirror/%{name}-%{version}.tar.gz
 URL:		http://pcb.sourceforge.net/
-BuildRequires:	X11-devel
-BuildRequires:	gtk+2-devel
+BuildRequires:	XFree86-devel
 BuildRequires:	bison
 BuildRequires:	flex
+BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	tetex-dvips
 BuildRequires:	tetex-format-latex
 BuildRequires:	texinfo
