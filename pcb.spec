@@ -1,13 +1,14 @@
 Summary:	Printed Circuit Board design tool
 Summary(pl):	PCB - narzêdzie do projektowania p³ytek drukowanych
 Name:		pcb
-Version:	20050315
-Release:	0.9
+Version:	20050418
+Release:	1
 License:	GPL
 Group:		X11/Applications
 # devel snaps: http://dl.sourceforge.net/pcb/
-Source0:	http://dl.sourceforge.net/pcb/%{name}-%{version}.tar.gz
-# Source0-md5:	853a0709003c2c8967c756b6068476f6
+#Source0:	http://dl.sourceforge.net/pcb/%{name}-%{version}.tar.gz
+Source0:	%{name}-gtk-%{version}.tar.bz2
+# Source0-md5:	f981290d2ffe1e72650249773b618f3a
 #Source0:	ftp://ftp.uni-ulm.de/pub/pcb/mirror/%{name}-%{version}.tar.gz
 URL:		http://pcb.sourceforge.net/
 BuildRequires:	XFree86-devel
@@ -30,7 +31,7 @@ Pcb jest podrêcznym narzêdziem pod X Window System do projektowania
 p³ytek drukowanych.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
 %configure 
