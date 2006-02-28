@@ -34,14 +34,14 @@ p³ytek drukowanych.
 
 %build
 %configure
-# dirty hack to build program 
-touch src/menu.h 
+# dirty hack to build program
+touch src/menu.h
 
 %{__make} -i \
-	CC=%{__cc} \
+	CC="%{__cc}" \
 	CDEBUGFLAGS="%{rpmcflags}" \
 	PCBLIBDIR=%{_datadir}/pcb
-	
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_infodir}
