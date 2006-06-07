@@ -2,7 +2,7 @@ Summary:	Printed Circuit Board design tool
 Summary(pl):	PCB - narzêdzie do projektowania p³ytek drukowanych
 Name:		pcb
 Version:	20060422
-Release:	0.01
+Release:	1
 License:	GPL
 Group:		X11/Applications
 # devel snaps: http://dl.sourceforge.net/pcb/
@@ -10,13 +10,15 @@ Source0:	http://dl.sourceforge.net/pcb/%{name}-%{version}.tar.gz
 # Source0-md5:	f70af0f43d9cf1a98ec6a7681773b793
 #Source0:	ftp://ftp.uni-ulm.de/pub/pcb/mirror/%{name}-%{version}.tar.gz
 URL:		http://pcb.sourceforge.net/
-BuildRequires:	XFree86-devel
 BuildRequires:	bison
 BuildRequires:	flex
+BuildRequires:	gd-devel
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	tetex-dvips
 BuildRequires:	tetex-format-latex
 BuildRequires:	texinfo
+BuildRequires:	xorg-lib-libICE-devel
+BuildRequires:	xorg-lib-libXpm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_appdefsdir	/usr/X11R6/lib/X11/app-defaults
@@ -34,8 +36,6 @@ p³ytek drukowanych.
 
 %build
 %configure
-# dirty hack to build program
-touch src/menu.h
 
 %{__make} -i \
 	CC="%{__cc}" \
