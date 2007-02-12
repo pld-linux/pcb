@@ -1,5 +1,5 @@
 Summary:	Printed Circuit Board design tool
-Summary(pl):	PCB - narzêdzie do projektowania p³ytek drukowanych
+Summary(pl.UTF-8):   PCB - narzÄ™dzie do projektowania pÅ‚ytek drukowanych
 Name:		pcb
 Version:	20050609
 Release:	0.1
@@ -26,9 +26,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Pcb is a handy tool for the X Window System build to design printed
 circuit boards.
 
-%description -l pl
-Pcb jest podrêcznym narzêdziem pod X Window System do projektowania
-p³ytek drukowanych.
+%description -l pl.UTF-8
+Pcb jest podrÄ™cznym narzÄ™dziem pod X Window System do projektowania
+pÅ‚ytek drukowanych.
 
 %prep
 %setup -q
