@@ -1,5 +1,5 @@
 Summary:	Printed Circuit Board design tool
-Summary(pl.UTF-8):   PCB - narzędzie do projektowania płytek drukowanych
+Summary(pl.UTF-8):	PCB - narzędzie do projektowania płytek drukowanych
 Name:		pcb
 Version:	20060422
 Release:	1
