@@ -13,11 +13,10 @@ URL:		http://pcb.sourceforge.net/
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	gd-devel
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.0.0
-BuildRequires:	tetex-dvips
-BuildRequires:	tetex-format-latex
-BuildRequires:	texinfo
-BuildRequires:	xorg-lib-libICE-devel
+BuildRequires:	perl-XML-Parser
+BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libXpm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,8 +36,9 @@ płytek drukowanych.
 %build
 export LDFLAGS="-L%{_x_libraries}"
 %configure \
+	WISH="%{_bindir}/wish" \
 	--disable-update-desktop-database \
-	--disable-update-mime-database 
+	--disable-update-mime-database
 
 %{__make} -i \
 	CC="%{__cc}" \
