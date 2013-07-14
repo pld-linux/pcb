@@ -1,0 +1,40 @@
+--- pcb-20080202/src/hid/gtk/gui-dialog.c.orig	2013-07-14 19:53:48.220483817 +0200
++++ pcb-20080202/src/hid/gtk/gui-dialog.c	2013-07-14 19:54:17.860775619 +0200
+@@ -97,7 +97,7 @@
+ 				   | GTK_DIALOG_DESTROY_WITH_PARENT,
+ 				   GTK_MESSAGE_INFO,
+ 				   GTK_BUTTONS_OK,
+-				   GetInfoString ()
++				   "%s", GetInfoString ()
+ 				   );
+ 
+   gtk_dialog_run (GTK_DIALOG (dialog));
+@@ -142,7 +142,7 @@
+ 				   GTK_DIALOG_MODAL |
+ 				   GTK_DIALOG_DESTROY_WITH_PARENT,
+ 				   GTK_MESSAGE_WARNING, GTK_BUTTONS_OK,
+-				   message);
++				   "%s", message);
+ 
+   gtk_dialog_run (GTK_DIALOG (dialog));
+   gtk_widget_destroy (dialog);
+@@ -169,7 +169,7 @@
+ 				   GTK_DIALOG_MODAL |
+ 				   GTK_DIALOG_DESTROY_WITH_PARENT,
+ 				   GTK_MESSAGE_QUESTION,
+-				   GTK_BUTTONS_NONE, message);
++				   GTK_BUTTONS_NONE, "%s", message);
+   gtk_dialog_add_buttons (GTK_DIALOG (dialog), 
+ 			  cancelmsg, GTK_RESPONSE_CANCEL,
+ 			  okmsg, GTK_RESPONSE_OK,
+--- pcb-20080202/src/hid/gtk/gui-top-window.c.orig	2013-07-14 19:55:25.204772217 +0200
++++ pcb-20080202/src/hid/gtk/gui-top-window.c	2013-07-14 19:55:48.758337617 +0200
+@@ -2508,7 +2508,7 @@
+     ghidgui->bg_pixbuf = gdk_pixbuf_new_from_file(bg_image_file, &err);
+   if (err)
+     {
+-    g_error(err->message);
++    g_error("%s", err->message);
+     g_error_free(err);
+     }
+   ghid_build_pcb_top_window ();

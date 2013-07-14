@@ -2,13 +2,14 @@ Summary:	Printed Circuit Board design tool
 Summary(pl.UTF-8):	PCB - narzędzie do projektowania płytek drukowanych
 Name:		pcb
 Version:	20080202
-Release:	7
+Release:	8
 License:	GPL
 Group:		X11/Applications
 # devel snaps: http://dl.sourceforge.net/pcb/
 Source0:	http://dl.sourceforge.net/pcb/%{name}-%{version}.tar.gz
 # Source0-md5:	933eda642f3838b24d417224693f8386
 #Source0:	ftp://ftp.uni-ulm.de/pub/pcb/mirror/%{name}-%{version}.tar.gz
+Patch0:		format-security.patch
 URL:		http://pcb.sourceforge.net/
 BuildRequires:	bison
 BuildRequires:	flex
@@ -32,6 +33,7 @@ płytek drukowanych.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 export LDFLAGS="-L%{_x_libraries}"
