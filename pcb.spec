@@ -14,7 +14,7 @@ URL:		http://pcb.sourceforge.net/
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	gd-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
