@@ -2,7 +2,7 @@ Summary:	Printed Circuit Board design tool
 Summary(pl.UTF-8):	PCB - narzędzie do projektowania płytek drukowanych
 Name:		pcb
 Version:	20080202
-Release:	9
+Release:	10
 License:	GPL
 Group:		X11/Applications
 # devel snaps: http://dl.sourceforge.net/pcb/
